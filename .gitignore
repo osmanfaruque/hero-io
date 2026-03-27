@@ -6,6 +6,8 @@ coverage/
 .env
 .env.*
 !.env.example
+req.md
+hero-io.fig
 
 # Keep design resources tracked
 !hero-io-resources/
