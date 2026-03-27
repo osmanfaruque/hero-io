@@ -1,25 +1,38 @@
 import { NavLink } from "react-router-dom";
+import logoImage from "../../../hero-io-resources/assets/logo.png";
 
 function Header() {
-  const baseClass = "rounded px-2 py-1 text-sm text-slate-200";
+  const linkClass = ({ isActive }) =>
+    [
+      "rounded px-2 py-1 text-sm font-medium transition-colors",
+      isActive ? "text-violet-500 underline" : "text-slate-700 hover:text-violet-500",
+    ].join(" ");
 
   return (
-    <header className="border-b border-slate-700 bg-slate-800/80">
-      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between p-4 md:px-6">
-        <NavLink className="text-lg font-semibold text-violet-300" to="/">
-          HERO.IO
+    <header className="border-b border-slate-200 bg-white">
+      <div className="mx-auto flex w-full max-w-[1200px] items-center justify-between gap-3 p-4 md:px-6">
+        <NavLink className="shrink-0" to="/">
+          <img alt="Hero IO logo" className="h-8 w-auto" src={logoImage} />
         </NavLink>
-        <nav className="flex items-center gap-4">
-          <NavLink className={baseClass} to="/">
+        <nav className="flex items-center gap-3 md:gap-6">
+          <NavLink className={linkClass} to="/">
             Home
           </NavLink>
-          <NavLink className={baseClass} to="/apps">
+          <NavLink className={linkClass} to="/apps">
             Apps
           </NavLink>
-          <NavLink className={baseClass} to="/installation">
+          <NavLink className={linkClass} to="/installation">
             Installation
           </NavLink>
         </nav>
+        <a
+          className="rounded-md bg-violet-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-violet-600"
+          href="https://github.com/osmanfaruque"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Contribute
+        </a>
       </div>
     </header>
   );
