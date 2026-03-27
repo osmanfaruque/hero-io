@@ -1,2 +1,11 @@
-req.md
-Hero IO.fig
+node_modules/
+dist/
+.DS_Store
+*.log
+coverage/
+.env
+.env.*
+!.env.example
+
+# Keep design resources tracked
+!hero-io-resources/
